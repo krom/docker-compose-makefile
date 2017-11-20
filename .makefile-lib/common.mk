@@ -1,4 +1,4 @@
-include .makefile-lib/variables.Makefile
+include .makefile-lib/variables.mk
 
 check-dependencies:
 	@echo Checking dependencies

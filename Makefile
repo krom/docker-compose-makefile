@@ -1,6 +1,6 @@
 default: help
 
-include .makefile-lib/common.Makefile
+include .makefile-lib/common.mk
 include .makerc
 
 .PHONY: help dependencies
