@@ -19,7 +19,7 @@ You can create _.make.env_ file in directory with Makefile
 
 Available variables
 
-* DOCKER_COMPOSE = {docker-compose} executable command
+* DOCKER_COMPOSE = {docker-compose executable command}
 * DOCKER_COMPOSE_FILE = {custom docker-compose.yml file}
 
 TO-DO
