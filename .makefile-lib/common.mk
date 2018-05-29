@@ -1,5 +1,5 @@
-include .makefile-lib/variables.mk
--include .make.env
+include $(ROOT_DIR)/.makefile-lib/variables.mk
+-include $(ROOT_DIR)/.make.env
 
 f ?= $(DOCKER_COMPOSE_FILE)
 DOCKER_COMPOSE_FILE := $(f)
