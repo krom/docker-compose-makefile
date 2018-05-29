@@ -1,4 +1,7 @@
-include .makefile-lib/common.mk
+# REQUIRED SECTION
+ROOT_DIR:=$(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
+include $(ROOT_DIR)/.makefile-lib/common.mk
+# END OF REQUIRED SECTION
 
 .PHONY: help dependencies
 
