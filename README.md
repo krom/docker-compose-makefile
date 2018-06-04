@@ -36,7 +36,7 @@ USAGE
 
 CUSTOMIZATION
 -------------
-You can create _.make.env_ file in directory with Makefile
+You can create _.make.env_ file in directory with Makefile or *current** directory
 
 Available variables
 

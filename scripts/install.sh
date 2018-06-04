@@ -1,5 +1,5 @@
 #/bin/sh
-REPO=krom/auto-releases-test
+REPO=krom/docker-compose-makefile
 get_latest_release() {
   curl --silent "https://api.github.com/repos/$1/releases/latest" | # Get latest release from GitHub api
     grep '"tag_name":' |                                            # Get tag line
