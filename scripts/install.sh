@@ -11,7 +11,7 @@ release=https://github.com/$REPO/releases/download/$v/release.tgz
 echo Downloading version $v from $release
 curl -Ls $release | tar zxfm -
 echo 'Created .mk-lib'
-if [ -f makefile ]; then
+if [ -f Makefile ]; then
     echo "Makefile exists. Please add this section to the head of Makefile"
     cat .mk-lib/HEADER.mk 
 else
