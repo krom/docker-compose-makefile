@@ -21,5 +21,5 @@ HELP_FUN = \
 
 #DEFAULT variables
 DOCKER_COMPOSE := docker-compose
-DOCKER_COMPOSE_FILE := docker-compose.yml
+DOCKER_COMPOSE_FILE := $(ROOT_DIR)/docker-compose.yml
 MK_REPO := krom/docker-compose-makefile
