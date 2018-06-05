@@ -22,6 +22,8 @@ curl -sL https://git.io/vh4Gn | sh
 USAGE
 -----
 
+![Screen](https://raw.githubusercontent.com/krom/docker-compose-makefile/master/docs/screencast.gif)
+
 **Common (see [sampess](https://github.com/krom/docker-compose-makefile/tree/master/samples))**
 - **make start** - start all containers
 - **make start c=hello** - start container hello
