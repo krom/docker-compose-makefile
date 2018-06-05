@@ -5,7 +5,7 @@ jobs:
     deploy:
       provider: releases
       api_key:
-        secure: Td12cB+gKDCdfgeGp99BRc/kQKxYfDg7eZglWi+CiSdvKOA4nDzIKlPcEhItXgPMclNQbqipDH6Y7+URBAO4nz5lHVEVsZXvg0XTajAQ8RnEwhvZR2d2IWy/eGRUe3d9Vc3Uqg9ugjLDQPcmNf3siyPs0zR1uDWWZHjjCmiTrMylmwB67u+ON8+TSVqbENnCB6svZruDtD7AD7H7Y13QUHwVes/jRlQ6foKJOXVwMvrA7JtaCzR/td4sKakYLPzDcrf2OTKOS1Z1RDvnxPc481nKXXFVgt9NRCph9DOxCeXDGOqryBmJg1BSSsnwHWeBtyNPgJrdJZjD1gvMKPFwFsS5ZRQfan72vvFj3B7UwUv2rAbtAcZCR5SFlwYbHDXbwnSj90/FabfFx8OHTh/okRHNf6NKb4N4m6hJKPo+sFEoCsQb0cXnuLrhFE9hC7a3XcMNc9oZCkH056E8Q1s+ehgdid/eywpKnAdSubn3P0IJXVYLrpHA0LHrTeyyTrJXQ63tDn2IA58aaEe7FqLAMae1H6iYzNCZzcDkbaBFdWWGqqj1hjFgSC/Ck0m7DR6u9pbVspOQROsTz/AqJWWr+2dFItNC1gBMM+1F7QfrXTZz0dIpLEaGAHQeJP2TpoyambCDFMG6vpCRPpZTgzWDGtjkcK4bBcLBNV2j96AWgNM=
+        secure: $GITHUB_OAUTH_TOKEN
       file:
       - release.zip
       - release.tgz
