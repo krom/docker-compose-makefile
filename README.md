@@ -91,4 +91,4 @@ MIT (see [LICENSE](LICENSE))
 AUTHOR
 ------
 
-[Roman Kudlay](http://roman.kudlay.pro) ([roman@kudlay.pro](maailto:roman@kudlay.pro))
+[Roman Kudlay](http://roman.kudlay.pro) ([roman@kudlay.pro](mailto:roman@kudlay.pro))
