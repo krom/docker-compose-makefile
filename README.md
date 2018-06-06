@@ -39,7 +39,7 @@ USAGE
 SAMPLES
 -------
 
-Basic command (you can copy and paste it into your Makefile)
+Basic commands (you can copy and paste it into your Makefile)
 
 ```makefile
 up: ## Start all or c=<name> containers in foreground

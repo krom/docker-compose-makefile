@@ -1,3 +1,5 @@
+* Added showing release notes while upgrading
+
 ## 1.0.1 (2018-06-06)
 * Added Makefile.sample.mk
 * Added CHANGELOG.md
