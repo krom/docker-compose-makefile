@@ -24,7 +24,7 @@ USAGE
 
 ![Screen](https://raw.githubusercontent.com/krom/docker-compose-makefile/master/docs/screencast.gif)
 
-**Common (see [sampess](https://github.com/krom/docker-compose-makefile/tree/master/samples))**
+**Common (see [samples](https://github.com/krom/docker-compose-makefile/tree/master/samples))**
 - **make start** - start all containers
 - **make start c=hello** - start container hello
 - **make stop** - stop all containers
@@ -39,11 +39,33 @@ USAGE
 SAMPLES
 -------
 
+Basic command (you can copy and paste it into your Makefile)
+
+```makefile
+up: ## Start all or c=<name> containers in foreground
+	@$(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FILE) up -d $(c)
+
+start: ## Start all or c=<name> containers in background
+	@$(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FILE) up -d $(c)
+
+stop: ## Stop all or c=<name> containers
+	@$(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FILE) stop $(c)
+
+status: ## Show status of containers
+	@$(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FILE) ps
+
+restart: ## Restart all or c=<name> containers
+	@$(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FILE) stop $(c)
+	@$(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FILE) up $(c) -d
+
+clean: ## Clean all data
+	@$(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FILE) down
+```
 You may see samples [here](https://github.com/krom/docker-compose-makefile/tree/master/samples)
 
 CUSTOMIZATION
 -------------
-You can create _.make.env_ file in directory with Makefile or *current** directory
+You can create _.make.env_ file in directory with Makefile or **current** directory
 
 Available variables
 
@@ -56,12 +78,17 @@ TO-DO
 - check dependencies
 - update readme
 
+CHANGELOG
+---------
+
+See [CHANGELOG](CHANGELOG.md))
+
 LICENSE
 -------
 
-MIT
+MIT (see [LICENSE](LICENSE))
 
 AUTHOR
 ------
 
-Roman Kudlay (roman@kudlay.pro)
+[Roman Kudlay](http://roman.kudlay.pro) ([roman@kudlay.pro](maailto:roman@kudlay.pro))

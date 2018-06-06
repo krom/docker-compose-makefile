@@ -7,16 +7,19 @@ include $(ROOT_DIR)/.makefile-lib/common.mk
 
 dependencies: check-dependencies ## Check dependencies
 
-start: ## Start all containers
+up: ## Start all or c=<name> containers in foreground
 	@$(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FILE) up -d $(c)
 
-stop: ## Stop all containers
+start: ## Start all or c=<name> containers in background
+	@$(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FILE) up -d $(c)
+
+stop: ## Stop all or c=<name> containers
 	@$(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FILE) stop $(c)
 
 status: ## Show status of containers
 	@$(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FILE) ps
 
-restart: ## Restart of containers
+restart: ## Restart all or c=<name> containers
 	@$(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FILE) stop $(c)
 	@$(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FILE) up $(c) -d
 
