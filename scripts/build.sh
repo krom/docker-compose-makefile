@@ -1,10 +1,20 @@
 #!/usr/bin/env sh
 echo "Building release"
-out=release/.mk-lib/
-mkdir -p $out
-cp -r src/* $out
-cp README.md $out
-cp LICENSE $out
-echo "MK_VERSION := $TRAVIS_TAG" > $out/version.mk
+OUT=release/.mk-lib
+
+# Creating dir
+mkdir -p $OUT
+
+# Coping files
+cp -r src/* $OUT
+cp README.md $OUT
+cp LICENSE $OUT
+cp CHANGELOG.md $OUT
+cp samples/Makefile $OUT/Makefile.sample.mk
+
+# Writing current version
+echo "MK_VERSION := $TRAVIS_TAG" > $OUT/version.mk
+
+# Compressing release to *.zip and *.tgz
 tar -czf release.tgz -C release .
 cd release/; zip -r ../release.zip .; cd ..

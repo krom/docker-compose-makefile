@@ -39,7 +39,7 @@ USAGE
 SAMPLES
 -------
 
-You may see sampess [here](https://github.com/krom/docker-compose-makefile/tree/master/samples)
+You may see samples [here](https://github.com/krom/docker-compose-makefile/tree/master/samples)
 
 CUSTOMIZATION
 -------------
