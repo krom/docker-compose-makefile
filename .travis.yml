@@ -5,7 +5,7 @@ jobs:
     deploy:
       provider: releases
       api_key:
-        secure: $GITHUB_OAUTH_TOKEN
+        secure: "$GITHUB_OAUTH_TOKEN"
       file:
       - release.zip
       - release.tgz
