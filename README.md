@@ -1,6 +1,4 @@
-Docker compose makefile
-=======================
-
+# Docker compose makefile
 [![Build Status](https://travis-ci.org/krom/docker-compose-makefile.svg?branch=master)](https://travis-ci.org/krom/docker-compose-makefile)
 [![Release](https://img.shields.io/github/release/krom/docker-compose-makefile.svg)](https://github.com/krom/docker-compose-makefile/releases/latest)
 [![Commits since last release](https://img.shields.io/github/commits-since/krom/docker-compose-makefile/latest.svg)](https://github.com/krom/docker-compose-makefile/commits/master)
@@ -12,16 +10,20 @@ Docker compose makefile
 
 Template and lib for docker-compose
 
-INSTALLATION
-------------
-Execute
+## INSTALLATION
+### INSTALLATION
+To install mk-lib run command
 ```bash
 curl -sL https://git.io/vh4Gn | sh
 ```
 
-USAGE
------
+### UPGRADE
+To upgrade existing mk-lib run command
+```bash
+make mk-upgrade
+```
 
+## USAGE
 ![Screen](https://raw.githubusercontent.com/krom/docker-compose-makefile/master/docs/screencast.gif)
 
 **Common (see [samples](https://github.com/krom/docker-compose-makefile/tree/master/samples))**
@@ -36,14 +38,13 @@ USAGE
 - **make mk-upgrade** - check for updates of mk-lib
 - **make mk-version** - show current version of mk-lib
 
-SAMPLES
--------
+## SAMPLES
 
-Basic command (you can copy and paste it into your Makefile)
+Basic commands (you can copy and paste it into your Makefile)
 
 ```makefile
 up: ## Start all or c=<name> containers in foreground
-	@$(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FILE) up -d $(c)
+	@$(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FILE) up $(c)
 
 start: ## Start all or c=<name> containers in background
 	@$(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FILE) up -d $(c)
@@ -63,8 +64,7 @@ clean: ## Clean all data
 ```
 You may see samples [here](https://github.com/krom/docker-compose-makefile/tree/master/samples)
 
-CUSTOMIZATION
--------------
+## CUSTOMIZATION
 You can create _.make.env_ file in directory with Makefile or **current** directory
 
 Available variables
@@ -72,23 +72,15 @@ Available variables
 * DOCKER_COMPOSE = {docker-compose executable command}
 * DOCKER_COMPOSE_FILE = {custom docker-compose.yml file}
 
-TO-DO
------
-
+## TO-DO
 - check dependencies
 - update readme
 
-CHANGELOG
----------
+## CHANGELOG
+See [CHANGELOG](CHANGELOG.md)
 
-See [CHANGELOG](CHANGELOG.md))
-
-LICENSE
--------
-
+## LICENSE
 MIT (see [LICENSE](LICENSE))
 
-AUTHOR
-------
-
-[Roman Kudlay](http://roman.kudlay.pro) ([roman@kudlay.pro](maailto:roman@kudlay.pro))
+## AUTHOR
+[Roman Kudlay](http://roman.kudlay.pro) ([roman@kudlay.pro](mailto:roman@kudlay.pro))
