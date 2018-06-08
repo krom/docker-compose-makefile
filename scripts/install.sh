@@ -31,6 +31,6 @@ if [ -f Makefile ]; then
     echo "-------------------------------------------------------------------------------
 "
 else
-    cp .mk-lib/Makefile.sample.mk Makefile
+    cp .mk-lib/Makefile.minimal.mk Makefile
     echo "Created new Makefile. Feel free to add new commands"
 fi;

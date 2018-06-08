@@ -11,6 +11,7 @@ cp README.md $OUT
 cp LICENSE $OUT
 cp CHANGELOG.md $OUT
 cp samples/Makefile $OUT/Makefile.sample.mk
+cp samples/Makefile.minimal.mk $OUT/Makefile.minimal.mk
 
 # Writing current version
 echo "MK_VERSION := $TRAVIS_TAG" > $OUT/version.mk

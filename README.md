@@ -26,17 +26,25 @@ make mk-upgrade
 ## USAGE
 ![Screen](https://raw.githubusercontent.com/krom/docker-compose-makefile/master/docs/screencast.gif)
 
-**Common (see [samples](https://github.com/krom/docker-compose-makefile/tree/master/samples))**
-- **make start** - start all containers
-- **make start c=hello** - start container hello
-- **make stop** - stop all containers
-- **make status** - show list of containers with statuses
-- **make clean** - clean all data
+**Common** (see [samples](https://github.com/krom/docker-compose-makefile/tree/master/samples))
+- `make console` - open container's console
+
+**From Makefile.minimal.mk** (see [samples](https://github.com/krom/docker-compose-makefile/tree/master/samples))
+- `make start` - start all containers
+- `make start` c=hello** - start container hello
+- `make stop` - stop all containers
+- `make status` - show list of containers with statuses
+- `make clean` - clean all data
 
 **From this library**
-- **make help** - show help (see above)
-- **make mk-upgrade** - check for updates of mk-lib
-- **make mk-version** - show current version of mk-lib
+- `make help` - show help (see above)
+- `make mk-upgrade` - check for updates of mk-lib
+- `make mk-version` - show current version of mk-lib
+
+### VARIABLES
+* **ROOT_DIR** - full path to dir with *Makefile*
+* **DOCKER_COMPOSE** - docker-compose executable command
+* **DOCKER_COMPOSE_FILE** - docker-compose.yml file 
 
 ## SAMPLES
 
@@ -69,8 +77,8 @@ You can create _.make.env_ file in directory with Makefile or **current** direct
 
 Available variables
 
-* DOCKER_COMPOSE = {docker-compose executable command}
-* DOCKER_COMPOSE_FILE = {custom docker-compose.yml file}
+* **DOCKER_COMPOSE** = {docker-compose executable command}
+* **DOCKER_COMPOSE_FILE** = {custom docker-compose.yml file}
 
 ## TO-DO
 - check dependencies

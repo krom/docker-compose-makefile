@@ -1,6 +1,7 @@
 ## 1.0.2 (2008-06-08)
 * Added showing release notes while upgrading
-* Changed create Makefile from Makefile.sample.mk instead of HEADER.mk
+* Added Makefile.minimal.mk with basic commands
+* Changed create Makefile from Makefile.minimal.mk instead of HEADER.mk
 
 ## 1.0.1 (2018-06-06)
 * Added Makefile.sample.mk
