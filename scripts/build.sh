@@ -19,4 +19,5 @@ echo "MK_VERSION := $TRAVIS_TAG" > $OUT/version.mk
 # Compressing release to *.zip and *.tgz
 tar -czf release.tgz -C release .
 cd release/; zip -r ../release.zip .; cd ..
+gem install octokit
 ruby scripts/github_release.rb -c CHANGELOG.md -s $api_key -r krom/docker-compose-makefile -t $TRAVIS_TAG
