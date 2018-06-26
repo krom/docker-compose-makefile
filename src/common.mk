@@ -1,5 +1,6 @@
-include $(ROOT_DIR)/.mk-lib/variables.mk
--include $(ROOT_DIR)/.mk-lib/version.mk
+MK_DIR := $(ROOT_DIR)/.mk-lib
+include $(MK_DIR)/variables.mk
+-include $(MK_DIR)/version.mk
 -include $(ROOT_DIR)/.make.env
 -include .make.env
 
@@ -11,8 +12,11 @@ DOCKER_COMPOSE_FILE := $(f)
 help: ##@other Show this help.
 	@perl -e '$(HELP_FUN)' $(MAKEFILE_LIST)
 
+confirm:
+	@( read -p "$(RED)Are you sure? [y/N]$(RESET): " sure && case "$$sure" in [yY]) true;; *) false;; esac )
+
 mk-upgrade: ##@other Check for updates of mk-lib
-	@MK_VERSION=$(MK_VERSION) MK_REPO=$(MK_REPO) $(ROOT_DIR)/.mk-lib/self-upgrade.sh
+	@MK_VERSION=$(MK_VERSION) MK_REPO=$(MK_REPO) $(MK_DIR)/self-upgrade.sh
 
 mk-version: ##@other Show current version of mk-lib
 	@echo $(MK_VERSION)

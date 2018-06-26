@@ -2,6 +2,7 @@
 GREEN  := $(shell tput -Txterm setaf 2)
 WHITE  := $(shell tput -Txterm setaf 7)
 YELLOW := $(shell tput -Txterm setaf 3)
+RED := $(shell tput -Txterm setaf 1)
 RESET  := $(shell tput -Txterm sgr0)
 
 # Add the following 'help' target to your Makefile

@@ -1,6 +1,6 @@
 # REQUIRED SECTION
 ROOT_DIR:=$(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
-include $(ROOT_DIR)/.makefile-lib/common.mk
+include $(ROOT_DIR)/.mk-lib/common.mk
 # END OF REQUIRED SECTION
 
 .PHONY: help dependencies up start stop restart status ps clean
@@ -25,5 +25,5 @@ status: ## Show status of containers
 
 ps: status ## Alias of status
 
-clean: ## Clean all data
+clean: confirm ## Clean all data
 	@$(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FILE) down
