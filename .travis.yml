@@ -1,14 +1,14 @@
-jobs:
-  include:
-    - stage: GitHub Release
-      script: bash scripts/build.sh
-      deploy:
-        provider: releases
-        api_key:
-          secure: ka1Dtj5o8Ut6ImoyyT3ixJdNtdsIfu2Du0K3+0rrZDApJtSfktwOplKuD4mfDQR8JITT+jAKzH4THruAEbjSoYj6Z5tuws4LB58NYRuat+PajQqOKaxC18cuzwhs6ei4CNCF1ImH/mrV8oWsSuZASo56IPhexmXlImktV4VGTLx3ydTxeTwac51m7gbl6Od7fzByMh/GXDqFuD9BzpTYfj9msTF0jATkNMkVWJxh+8thUj8YbGxfM6v3k9T36izY0dh/RsnzG1U9j760vKr00BnX7B4gTfnvmzr/Ok5/G4rMs7bX3FvJDuKqxwj4CnRtQaFofHdTI+GaAFZyVCVTOpDNbvJOTi/vU3bnD5D37vu31QyCCNF8o0M+qW7sjmwquBoExhHIWS6asjCbn6tqMHRm9rWwnLiON+pBSMY1mYoWH8Pg4G7PLVzFpOZrOxf9wAIcr8hJIwSCfaDsF8LHRjJuJxe8mvmAeNHATyaoEMWrHUKEkYjpKaHzWxLiMb4dDiEI/n4WBz1893j11jFBPw9vvFMyj953sEtM0ly/XUuc1N4KKiTpuzGhh8YmuDOcFgEsLZCnroNYaw7mwc/uJOcw+lLvsbCi/A9g5sIrWOWn7+NFzWgsWto32FmbvKdDx+hYfMVjxiInm+o9+7wAB+fwOMow0CvuAawu7J8AQxs=
-        file:
-        - release.zip
-        - release.tgz
-        skip_cleanup: true
-        on:
-          tags: true
+script:
+- true
+
+before_deploy: bash scripts/build.sh
+deploy:
+  provider: releases
+  api_key:
+    secure: ka1Dtj5o8Ut6ImoyyT3ixJdNtdsIfu2Du0K3+0rrZDApJtSfktwOplKuD4mfDQR8JITT+jAKzH4THruAEbjSoYj6Z5tuws4LB58NYRuat+PajQqOKaxC18cuzwhs6ei4CNCF1ImH/mrV8oWsSuZASo56IPhexmXlImktV4VGTLx3ydTxeTwac51m7gbl6Od7fzByMh/GXDqFuD9BzpTYfj9msTF0jATkNMkVWJxh+8thUj8YbGxfM6v3k9T36izY0dh/RsnzG1U9j760vKr00BnX7B4gTfnvmzr/Ok5/G4rMs7bX3FvJDuKqxwj4CnRtQaFofHdTI+GaAFZyVCVTOpDNbvJOTi/vU3bnD5D37vu31QyCCNF8o0M+qW7sjmwquBoExhHIWS6asjCbn6tqMHRm9rWwnLiON+pBSMY1mYoWH8Pg4G7PLVzFpOZrOxf9wAIcr8hJIwSCfaDsF8LHRjJuJxe8mvmAeNHATyaoEMWrHUKEkYjpKaHzWxLiMb4dDiEI/n4WBz1893j11jFBPw9vvFMyj953sEtM0ly/XUuc1N4KKiTpuzGhh8YmuDOcFgEsLZCnroNYaw7mwc/uJOcw+lLvsbCi/A9g5sIrWOWn7+NFzWgsWto32FmbvKdDx+hYfMVjxiInm+o9+7wAB+fwOMow0CvuAawu7J8AQxs=
+  file:
+  - release.zip
+  - release.tgz
+  skip_cleanup: true
+  on:
+    tags: true
