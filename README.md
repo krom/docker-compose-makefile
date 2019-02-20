@@ -31,9 +31,10 @@ make mk-upgrade
 
 **From Makefile.minimal.mk** (see [samples](https://github.com/krom/docker-compose-makefile/tree/master/samples))
 - `make start` - start all containers
-- `make start` c=hello** - start container hello
+- `make start` c=hello - start container hello
 - `make stop` - stop all containers
 - `make status` - show list of containers with statuses
+- `make logs` - show logs
 - `make clean` - clean all data
 
 **From this library**
@@ -67,6 +68,9 @@ status: ## Show status of containers
 restart: ## Restart all or c=<name> containers
 	@$(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FILE) stop $(c)
 	@$(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FILE) up $(c) -d
+
+logs: ## Show logs for all or c=<name> containers
+	@$(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FILE) logs --tail=100 -f $(c)
 
 clean: confirm ## Clean all data
 	@$(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FILE) down

@@ -20,6 +20,9 @@ restart: ## Restart all or c=<name> containers
 	@$(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FILE) stop $(c)
 	@$(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FILE) up $(c) -d
 
+logs: ## Show logs for all or c=<name> containers
+	@$(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FILE) logs --tail=100 -f $(c)
+
 status: ## Show status of containers
 	@$(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FILE) ps
 

@@ -1,9 +1,12 @@
-## 1.0.3 (2008-06-26)
+## 1.0.4 (alpha)
+* Added `logs` target
+
+## 1.0.3 (2018-06-26)
 * Added MK_DIR variable linked to .mk-lib dir
 * Fixed path to mk-lib into new Makefile
 * Added `confirm` target. See Makefile sample
 
-## 1.0.2 (2008-06-08)
+## 1.0.2 (2018-06-08)
 * Added showing release notes while upgrading
 * Added Makefile.minimal.mk with basic commands
 * Changed create Makefile from Makefile.minimal.mk instead of HEADER.mk
