@@ -1,4 +1,5 @@
-OUT:=release/.mk-lib
+OUT:=build/.mk-lib
+TAG?=$(shell git rev-parse --short HEAD)
 
 clean-release:
 	rm -f release.tgz
@@ -18,7 +19,10 @@ release.tgz: src/* README.md LICENSE CHANGELOG.md samples/Makefile samples/Makef
 	cp samples/Makefile.minimal.mk $(OUT)/Makefile.minimal.mk
 	
 	# Writing current version
-	echo "MK_VERSION := $TRAVIS_TAG" > $(OUT)/version.mk
+	echo "MK_VERSION := $(TAG)" > $(OUT)/version.mk
 	
 	# Compressing release to *.zip and *.tgz
-	tar -czf release.tgz -C release .
+	tar -czf release.tgz -C build .
+
+	# Clean up the build dir
+	rm -rf $(OUT)
