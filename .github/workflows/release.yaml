@@ -2,9 +2,17 @@ name: package release
 run-name: Release
 on:
   workflow_dispatch:
+  push:
+    tags:
+      - "v*.*.*"
 jobs:
   package-and-upload-release-asset:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: echo "Running"
+      - name: Build
+        run: make release.tgz
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: release.tgz
