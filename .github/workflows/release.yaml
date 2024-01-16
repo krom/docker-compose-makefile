@@ -1,0 +1,10 @@
+name: package release
+run-name: Release
+on:
+  workflow_dispatch:
+jobs:
+  package-and-upload-release-asset:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "Running"
